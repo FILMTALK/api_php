@@ -1,6 +1,6 @@
 # api_php
 ============================
-´´´php
+```js
 
 <?php
 $peliculas="http://filmdate-filmdate.rhcloud.com/api/api.php/getPeliculas";
