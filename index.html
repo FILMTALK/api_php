@@ -39,25 +39,39 @@
 <div class="highlight highlight-php"><pre><span class="pl-s2"></span>
 <span class="pl-s2"><span class="pl-k">&lt;</span>?<span class="pl-c1">php</span></span>
 <span class="pl-s2"><span class="pl-vo">$peliculas</span><span class="pl-k">=</span><span class="pl-s1"><span class="pl-pds">"</span>http://filmdate-filmdate.rhcloud.com/api/api.php/getPeliculas<span class="pl-pds">"</span></span>;</span>
+<span class="pl-s2"></span>
 <span class="pl-s2"><span class="pl-vo">$resultaPelis</span><span class="pl-k">=</span>obtenerUrl(<span class="pl-vo">$peliculas</span>);</span>
+<span class="pl-s2"></span>
 <span class="pl-s2"><span class="pl-s3">var_dump</span>(<span class="pl-vo">$resultaPelis</span>);</span>
+<span class="pl-s2"></span>
 <span class="pl-s2"><span class="pl-s3">echo</span> <span class="pl-s1"><span class="pl-pds">"</span>&lt;br&gt;&lt;br&gt;<span class="pl-pds">"</span></span>;</span>
+<span class="pl-s2"></span>
 <span class="pl-s2"><span class="pl-vo">$pelicula</span><span class="pl-k">=</span><span class="pl-s1"><span class="pl-pds">"</span>http://filmdate-filmdate.rhcloud.com/api/api.php/getPelicula/Big%20Hero%206<span class="pl-pds">"</span></span>;</span>
+<span class="pl-s2"></span>
 <span class="pl-s2"><span class="pl-vo">$resultaPelicula</span><span class="pl-k">=</span>obtenerUrl(<span class="pl-vo">$pelicula</span>);</span>
+<span class="pl-s2"></span>
 <span class="pl-s2"><span class="pl-s3">var_dump</span>(<span class="pl-vo">$resultaPelicula</span>);</span>
+<span class="pl-s2"></span>
 <span class="pl-s2"><span class="pl-st">function</span> <span class="pl-en">obtenerUrl</span>(<span class="pl-vo">$url</span>){</span>
+<span class="pl-s2"></span>
 <span class="pl-s2">    <span class="pl-c">// Inicia sesión cURL</span></span>
 <span class="pl-s2">    <span class="pl-vo">$curl</span><span class="pl-k">=</span><span class="pl-s3">curl_init</span>(<span class="pl-vo">$url</span>);</span>
+<span class="pl-s2"></span>
 <span class="pl-s2">    <span class="pl-c">// Configura una opción para una transferencia cURL    </span></span>
 <span class="pl-s2">    <span class="pl-s3">curl_setopt</span>(<span class="pl-vo">$curl</span>, <span class="pl-sc">CURLOPT_RETURNTRANSFER</span>, <span class="pl-c1">true</span>);</span>
+<span class="pl-s2"></span>
 <span class="pl-s2">    <span class="pl-c">// Establece una sesión cURL</span></span>
 <span class="pl-s2">    <span class="pl-vo">$data</span><span class="pl-k">=</span><span class="pl-s3">curl_exec</span>(<span class="pl-vo">$curl</span>);</span>
+<span class="pl-s2"></span>
 <span class="pl-s2">    <span class="pl-c">// Cierra una sesión cURL</span></span>
 <span class="pl-s2">    <span class="pl-s3">curl_close</span>(<span class="pl-vo">$curl</span>);</span>
+<span class="pl-s2"></span>
 <span class="pl-s2">    <span class="pl-c">// Decodifica un string de JSON</span></span>
 <span class="pl-s2">    <span class="pl-vo">$search_results</span><span class="pl-k">=</span><span class="pl-s3">json_decode</span>(<span class="pl-vo">$data</span>);</span>
+<span class="pl-s2"></span>
 <span class="pl-s2">    <span class="pl-c">// Devuelve un array de resultados</span></span>
 <span class="pl-s2">    <span class="pl-k">return</span> <span class="pl-vo">$search_results</span>;</span>
+<span class="pl-s2"></span>
 <span class="pl-s2">} <span class="pl-c">// Cierre de la función obtenerUrl</span></span>
 <span class="pl-s2"></span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span></pre></div>
       </section>
