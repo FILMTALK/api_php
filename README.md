@@ -1,6 +1,6 @@
 # api_php
 ============================
-
+´´´php
 
 <?php
 $peliculas="http://filmdate-filmdate.rhcloud.com/api/api.php/getPeliculas";
@@ -25,3 +25,4 @@ function obtenerUrl($url){
 	return $search_results;
 } // Cierre de la función obtenerUrl
 ?>
+```
