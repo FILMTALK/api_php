@@ -55,5 +55,6 @@ function obtenerUrl($url){
     return $search_results;
 
 } // Cierre de la función obtenerUrl
+
 ?>
 ```
