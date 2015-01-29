@@ -3,18 +3,25 @@
 ```js
 
 <?php
+
+// URL para obtener todas las películas
 $peliculas="http://filmdate-filmdate.rhcloud.com/api/api.php/getPeliculas";
 
+// Se obtiene los resultados en un array
 $resultaPelis=obtenerUrl($peliculas);
 
+// Se muestra el array
 var_dump($resultaPelis);
 
 echo "<br><br>";
 
+// Ejemplo de URL para los datos de una sola película
 $pelicula="http://filmdate-filmdate.rhcloud.com/api/api.php/getPelicula/Big%20Hero%206";
 
+// Se obtiene los resultados en un array
 $resultaPelicula=obtenerUrl($pelicula);
 
+// Se muestra el array
 var_dump($resultaPelicula);
 
 function obtenerUrl($url){
