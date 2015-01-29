@@ -32,49 +32,55 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a id="api-php" class="anchor" href="#api-php" aria-hidden="true"><span class="octicon octicon-link"></span></a>API PHP</h1>
+<a id="api_php" class="anchor" href="#api_php" aria-hidden="true"><span class="octicon octicon-link"></span></a>api_php</h1>
 
 <h1></h1>
 
-<div class="highlight highlight-php"><pre><span class="pl-s2"></span>
-<span class="pl-s2"><span class="pl-k">&lt;</span>?<span class="pl-c1">php</span></span>
-<span class="pl-s2"><span class="pl-vo">$peliculas</span><span class="pl-k">=</span><span class="pl-s1"><span class="pl-pds">"</span>http://filmdate-filmdate.rhcloud.com/api/api.php/getPeliculas<span class="pl-pds">"</span></span>;</span>
-<span class="pl-s2"></span>
-<span class="pl-s2"><span class="pl-vo">$resultaPelis</span><span class="pl-k">=</span>obtenerUrl(<span class="pl-vo">$peliculas</span>);</span>
-<span class="pl-s2"></span>
-<span class="pl-s2"><span class="pl-s3">var_dump</span>(<span class="pl-vo">$resultaPelis</span>);</span>
-<span class="pl-s2"></span>
-<span class="pl-s2"><span class="pl-s3">echo</span> <span class="pl-s1"><span class="pl-pds">"</span>&lt;br&gt;&lt;br&gt;<span class="pl-pds">"</span></span>;</span>
-<span class="pl-s2"></span>
-<span class="pl-s2"><span class="pl-vo">$pelicula</span><span class="pl-k">=</span><span class="pl-s1"><span class="pl-pds">"</span>http://filmdate-filmdate.rhcloud.com/api/api.php/getPelicula/Big%20Hero%206<span class="pl-pds">"</span></span>;</span>
-<span class="pl-s2"></span>
-<span class="pl-s2"><span class="pl-vo">$resultaPelicula</span><span class="pl-k">=</span>obtenerUrl(<span class="pl-vo">$pelicula</span>);</span>
-<span class="pl-s2"></span>
-<span class="pl-s2"><span class="pl-s3">var_dump</span>(<span class="pl-vo">$resultaPelicula</span>);</span>
-<span class="pl-s2"></span>
-<span class="pl-s2"><span class="pl-st">function</span> <span class="pl-en">obtenerUrl</span>(<span class="pl-vo">$url</span>){</span>
-<span class="pl-s2"></span>
-<span class="pl-s2">    <span class="pl-c">// Inicia sesión cURL</span></span>
-<span class="pl-s2">    <span class="pl-vo">$curl</span><span class="pl-k">=</span><span class="pl-s3">curl_init</span>(<span class="pl-vo">$url</span>);</span>
-<span class="pl-s2"></span>
-<span class="pl-s2">    <span class="pl-c">// Configura una opción para una transferencia cURL    </span></span>
-<span class="pl-s2">    <span class="pl-s3">curl_setopt</span>(<span class="pl-vo">$curl</span>, <span class="pl-sc">CURLOPT_RETURNTRANSFER</span>, <span class="pl-c1">true</span>);</span>
-<span class="pl-s2"></span>
-<span class="pl-s2">    <span class="pl-c">// Establece una sesión cURL</span></span>
-<span class="pl-s2">    <span class="pl-vo">$data</span><span class="pl-k">=</span><span class="pl-s3">curl_exec</span>(<span class="pl-vo">$curl</span>);</span>
-<span class="pl-s2"></span>
-<span class="pl-s2">    <span class="pl-c">// Cierra una sesión cURL</span></span>
-<span class="pl-s2">    <span class="pl-s3">curl_close</span>(<span class="pl-vo">$curl</span>);</span>
-<span class="pl-s2"></span>
-<span class="pl-s2">    <span class="pl-c">// Decodifica un string de JSON</span></span>
-<span class="pl-s2">    <span class="pl-vo">$search_results</span><span class="pl-k">=</span><span class="pl-s3">json_decode</span>(<span class="pl-vo">$data</span>);</span>
-<span class="pl-s2"></span>
-<span class="pl-s2">    <span class="pl-c">// Devuelve un array de resultados</span></span>
-<span class="pl-s2">    <span class="pl-k">return</span> <span class="pl-vo">$search_results</span>;</span>
-<span class="pl-s2"></span>
-<span class="pl-s2">} <span class="pl-c">// Cierre de la función obtenerUrl</span></span>
-<span class="pl-s2"></span>
-<span class="pl-s2"></span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span></pre></div>
+<div class="highlight highlight-js"><pre>
+<span class="pl-k">&lt;?</span>php
+
+<span class="pl-c">// URL para obtener todas las películas</span>
+$peliculas<span class="pl-k">=</span><span class="pl-s1"><span class="pl-pds">"</span>http://filmdate-filmdate.rhcloud.com/api/api.php/getPeliculas<span class="pl-pds">"</span></span>;
+
+<span class="pl-c">// Se obtiene los resultados en un array</span>
+$resultaPelis<span class="pl-k">=</span>obtenerUrl($peliculas);
+
+<span class="pl-c">// Se muestra el array</span>
+var_dump($resultaPelis);
+
+echo <span class="pl-s1"><span class="pl-pds">"</span>&lt;br&gt;&lt;br&gt;<span class="pl-pds">"</span></span>;
+
+<span class="pl-c">// Ejemplo de URL para los datos de una sola película</span>
+$pelicula<span class="pl-k">=</span><span class="pl-s1"><span class="pl-pds">"</span>http://filmdate-filmdate.rhcloud.com/api/api.php/getPelicula/Big%20Hero%206<span class="pl-pds">"</span></span>;
+
+<span class="pl-c">// Se obtiene los resultados en un array</span>
+$resultaPelicula<span class="pl-k">=</span>obtenerUrl($pelicula);
+
+<span class="pl-c">// Se muestra el array</span>
+var_dump($resultaPelicula);
+
+<span class="pl-st">function</span> <span class="pl-en">obtenerUrl</span>(<span class="pl-vpf">$url</span>){
+
+    <span class="pl-c">// Inicia sesión cURL</span>
+    $curl<span class="pl-k">=</span>curl_init($url);
+
+    <span class="pl-c">// Configura una opción para una transferencia cURL    </span>
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, <span class="pl-c1">true</span>);
+
+    <span class="pl-c">// Establece una sesión cURL</span>
+    $data<span class="pl-k">=</span>curl_exec($curl);
+
+    <span class="pl-c">// Cierra una sesión cURL</span>
+    curl_close($curl);
+
+    <span class="pl-c">// Decodifica un string de JSON</span>
+    $search_results<span class="pl-k">=</span>json_decode($data);
+
+    <span class="pl-c">// Devuelve un array de resultados</span>
+    <span class="pl-k">return</span> $search_results;
+
+} <span class="pl-c">// Cierre de la función obtenerUrl</span>
+<span class="pl-k">?&gt;</span></pre></div>
       </section>
     </div>
 
